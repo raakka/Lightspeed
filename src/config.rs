@@ -15,5 +15,4 @@ pub mod config {
             cfg.try_into()
         }
     }
-};
-
+}

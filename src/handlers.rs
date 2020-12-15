@@ -17,6 +17,5 @@ pub mod handlers {
 
         // DO SOME STUFF
         OK("HELLO!")
-    };
-    
-};
+    }
+}
