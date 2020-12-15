@@ -2,8 +2,8 @@ pub mod config {
     pub use ::config::ConfigError;
     use serde::Deserialize;
 
-    #[derive (Serialize, Deserialize)]
-    pub struct Somestruct{
+    #[derive (Deserialize)]
+    pub struct Config{
         pub api_addr: String,
         pub redis_addr: String,
     }

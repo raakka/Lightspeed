@@ -2,6 +2,7 @@
 mod models;
 
 pub mod handlers {
+    use crate::handlers::models::models::Somestruct;
     use actix_web::{
         web,
         Error,
@@ -16,6 +17,7 @@ pub mod handlers {
         let in_json: Somestruct = jsonreq.into_inner();    
 
         // DO SOME STUFF
-        OK("HELLO!")
+        // WHY???
+        Ok(HttpResponse::Ok().json(in_json))
     }
 }

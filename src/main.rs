@@ -33,11 +33,11 @@ async fn main() -> std::io::Result<()> {
             .wrap(middleware::Logger::default())
             .service(web::resource("/routelol")
                      .route(web::post()
-                            .to(handlers::redisfn)
+                            .to(handlers::handlers::redisfn)
                     )
             )
     })
-    .bind(cfg.api_addr.clone()?)
+    .bind(cfg.api_addr.clone())?
     .run();
 
     server.await
