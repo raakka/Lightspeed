@@ -8,6 +8,7 @@ mod config;
 #[path = "handlers.rs"] 
 mod handlers;
 
+use dotenv::dotenv;
 use actix_web::{
     web,
     App,
@@ -17,6 +18,8 @@ use actix_web::{
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    // DO NOT FORGET TO CHECK ENV
+    dotenv().ok();
 
     // LOGGER
     std::env::set_var("RUST_LOG", "actix_web=info");
